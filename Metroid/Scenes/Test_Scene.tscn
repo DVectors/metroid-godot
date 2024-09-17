@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://8sy1aacbk07x"]
+[gd_scene load_steps=2 format=3 uid="uid://8sy1aacbk07x"]
+
+[ext_resource type="Texture2D" uid="uid://dvngqh4mt02cd" path="res://Resources/Logos/Metroid_logo.png" id="1_er75j"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="MetroidLogo" type="Sprite2D" parent="."]
+position = Vector2(603, 330)
+texture = ExtResource("1_er75j")

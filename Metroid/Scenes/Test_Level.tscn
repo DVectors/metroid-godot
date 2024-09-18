@@ -1,8 +1,21 @@
-[gd_scene load_steps=8 format=4 uid="uid://cnj0whhe3gdrr"]
+[gd_scene load_steps=12 format=4 uid="uid://cnj0whhe3gdrr"]
 
 [ext_resource type="Texture2D" uid="uid://d2ll3mh0l0t7d" path="res://Resources/Tiles/Brinstar/brinstar_blue.png" id="1_ma1nh"]
 [ext_resource type="Script" path="res://Resources/Scripts/Player/PlayerController.cs" id="1_nel8h"]
 [ext_resource type="Texture2D" uid="uid://1yd1xx67ubnl" path="res://Resources/Sprites/Characters/Samus/idle.png" id="2_r1q84"]
+[ext_resource type="Texture2D" uid="uid://2qfhek8bo7eh" path="res://Resources/Sprites/Characters/Samus/walk.png" id="3_0d6rm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1i5c"]
+atlas = ExtResource("3_0d6rm")
+region = Rect2(0, 0, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqjpy"]
+atlas = ExtResource("3_0d6rm")
+region = Rect2(22, 0, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwurw"]
+atlas = ExtResource("3_0d6rm")
+region = Rect2(44, 0, 20, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_poep0"]
 animations = [{
@@ -13,6 +26,20 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1i5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqjpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwurw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n6ag"]
@@ -32,9 +59,9 @@ separation = Vector2i(2, 2)
 4:0/0 = 0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8)
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, -8, 8)
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
@@ -55,8 +82,9 @@ script = ExtResource("1_nel8h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Samus"]
 sprite_frames = SubResource("SpriteFrames_poep0")
-animation = &"idle"
-frame_progress = 0.927393
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.799879
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Samus"]
 shape = SubResource("RectangleShape2D_1n6ag")

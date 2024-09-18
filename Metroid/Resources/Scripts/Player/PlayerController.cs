@@ -3,8 +3,27 @@ using System;
 
 public partial class PlayerController : CharacterBody2D
 {
+	private AnimatedSprite2D _animatedSprite; // Get sprite animator
+	
 	public const float Speed = 125.0f;
 	public const float JumpVelocity = -400.0f;
+	
+	public override void _Ready()
+	{
+		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+	}
+
+	public override void _Process(double delta)
+	{
+		if (Input.IsActionPressed("ui_left") || Input.IsActionPressed("ui_right"))
+		{
+			_animatedSprite.Play("walk");
+		}
+		else
+		{
+			_animatedSprite.Play("idle");
+		}
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{

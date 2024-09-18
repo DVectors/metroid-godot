@@ -22,30 +22,41 @@ size = Vector2(20, 32)
 texture = ExtResource("1_ma1nh")
 separation = Vector2i(2, 2)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_fem0b"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_48oux")
 
 [node name="TestLevel" type="Node2D"]
 
 [node name="Samus" type="CharacterBody2D" parent="."]
-position = Vector2(-42, -33)
+position = Vector2(-42, -47)
 slide_on_ceiling = false
 script = ExtResource("1_nel8h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Samus"]
 sprite_frames = SubResource("SpriteFrames_poep0")
 animation = &"idle"
-frame_progress = 0.896753
+frame_progress = 0.0261649
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Samus"]
 shape = SubResource("RectangleShape2D_1n6ag")

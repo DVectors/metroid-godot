@@ -53,7 +53,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n6ag"]
-size = Vector2(17, 32)
+size = Vector2(21, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48oux"]
 texture = ExtResource("1_ma1nh")
@@ -150,11 +150,11 @@ script = ExtResource("1_nel8h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Samus"]
 sprite_frames = SubResource("SpriteFrames_poep0")
-animation = &"idle"
+animation = &"jump"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Samus"]
-position = Vector2(-2.5, 0)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_1n6ag")
 
 [node name="Camera2D" type="Camera2D" parent="Samus"]

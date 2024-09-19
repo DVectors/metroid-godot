@@ -15,7 +15,7 @@ public partial class PlayerController : CharacterBody2D
 
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionPressed("ui_left") || Input.IsActionPressed("ui_right"))
+		if (Input.IsActionPressed("walk_left") || Input.IsActionPressed("walk_right"))
 		{
 			_animatedSprite.Play("walk");
 		}

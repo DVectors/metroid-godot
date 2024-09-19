@@ -52,6 +52,16 @@ public partial class PlayerController : CharacterBody2D
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 		}
+		
+		// Flip depending on velocity
+		if (velocity.X > 0f)
+		{
+			_animatedSprite.FlipH = false;
+		}
+		else if (velocity.X < 0f)
+		{
+			_animatedSprite.FlipH = true;
+		}
 
 		Velocity = velocity;
 		MoveAndSlide();

@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n6ag"]
-size = Vector2(20, 32)
+size = Vector2(17, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48oux"]
 texture = ExtResource("1_ma1nh")
@@ -87,6 +87,7 @@ autoplay = "walk"
 frame_progress = 0.849866
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Samus"]
+position = Vector2(-2.5, 0)
 shape = SubResource("RectangleShape2D_1n6ag")
 
 [node name="Camera2D" type="Camera2D" parent="Samus"]

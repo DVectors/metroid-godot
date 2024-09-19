@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://cnj0whhe3gdrr"]
+[gd_scene load_steps=20 format=4 uid="uid://cnj0whhe3gdrr"]
 
 [ext_resource type="Texture2D" uid="uid://d2ll3mh0l0t7d" path="res://Resources/Tiles/Brinstar/brinstar_blue.png" id="1_ma1nh"]
 [ext_resource type="Script" path="res://Resources/Scripts/Player/PlayerController.cs" id="1_nel8h"]
 [ext_resource type="Texture2D" uid="uid://1yd1xx67ubnl" path="res://Resources/Sprites/Characters/Samus/idle.png" id="2_r1q84"]
 [ext_resource type="Texture2D" uid="uid://2qfhek8bo7eh" path="res://Resources/Sprites/Characters/Samus/walk.png" id="3_0d6rm"]
+[ext_resource type="Texture2D" uid="uid://143e7hqmtnur" path="res://Resources/Sprites/Objects/Chozo Statue/chozo_statue_brinstar_blue.png" id="5_3yvri"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1i5c"]
 atlas = ExtResource("3_0d6rm")
@@ -73,6 +74,64 @@ separation = Vector2i(2, 2)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_48oux")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7en2l"]
+atlas = ExtResource("5_3yvri")
+region = Rect2(126, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tprg6"]
+atlas = ExtResource("5_3yvri")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tuyd"]
+atlas = ExtResource("5_3yvri")
+region = Rect2(42, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1rvd"]
+atlas = ExtResource("5_3yvri")
+region = Rect2(84, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ti3bt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7en2l")
+}],
+"loop": true,
+"name": &"orbless",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tprg6")
+}],
+"loop": true,
+"name": &"ponder_orb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tprg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tuyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1rvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7en2l")
+}],
+"loop": true,
+"name": &"prize_unveil",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1uuf"]
+size = Vector2(23, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3a5a"]
+size = Vector2(15, 16)
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="Samus" type="CharacterBody2D" parent="."]
@@ -99,3 +158,19 @@ tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD+////AAAAAAAAAAD9////AAAAAAA
 tile_set = SubResource("TileSet_fem0b")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Chozo Statue" type="StaticBody2D" parent="."]
+position = Vector2(-288, -24)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Chozo Statue"]
+position = Vector2(8, 1)
+sprite_frames = SubResource("SpriteFrames_ti3bt")
+animation = &"orbless"
+
+[node name="CollisionShapeBody" type="CollisionShape2D" parent="Chozo Statue"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_d1uuf")
+
+[node name="CollisionShapeHand" type="CollisionShape2D" parent="Chozo Statue"]
+position = Vector2(19.5, 13)
+shape = SubResource("RectangleShape2D_j3a5a")

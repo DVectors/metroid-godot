@@ -43,6 +43,11 @@ public partial class PlayerController : CharacterBody2D
 		{
 			_velocity.Y = JumpVelocity;
 		}
+		// Handle fall if jump button released
+		if (Input.IsActionJustReleased("jump") && _velocity.Y < 0f)
+		{
+			_velocity.Y = 0f;
+		}
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.

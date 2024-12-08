@@ -16,9 +16,7 @@ public abstract partial class AbstractItem : Area2D
         SetProcess(setActive);
         SetPhysicsProcess(setActive);
 
-        if (setActive == false)
-        {
+        if (!setActive)
             Hide();
-        }
     }
 }

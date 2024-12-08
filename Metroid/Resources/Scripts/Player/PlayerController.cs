@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Metroid.Resources.Scripts.Player.Abilities;
 
 public partial class PlayerController : CharacterBody2D
 {
@@ -8,9 +9,11 @@ public partial class PlayerController : CharacterBody2D
 	
 	public const float Speed = 125.0f;
 	public const float JumpVelocity = -275.0f;
+	public AbilityManager AbilityManager;
 	
 	public override void _Ready()
 	{
+		AbilityManager = new AbilityManager();
 		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	}
 

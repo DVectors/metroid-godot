@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cnj0whhe3gdrr"]
+[gd_scene load_steps=24 format=4 uid="uid://cnj0whhe3gdrr"]
 
 [ext_resource type="Texture2D" uid="uid://d2ll3mh0l0t7d" path="res://Resources/Tiles/Brinstar/brinstar_blue.png" id="1_ma1nh"]
 [ext_resource type="Script" path="res://Resources/Scripts/Player/PlayerController.cs" id="1_nel8h"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://2qfhek8bo7eh" path="res://Resources/Sprites/Characters/Samus/walk.png" id="3_0d6rm"]
 [ext_resource type="Texture2D" uid="uid://dsvegpxka4gn3" path="res://Resources/Sprites/Characters/Samus/jump.png" id="3_yr3q5"]
 [ext_resource type="Texture2D" uid="uid://143e7hqmtnur" path="res://Resources/Sprites/Objects/Chozo Statue/chozo_statue_brinstar_blue.png" id="5_3yvri"]
+[ext_resource type="Script" path="res://Resources/Scripts/Items/MorphBall.cs" id="7_33k00"]
+[ext_resource type="Texture2D" uid="uid://clivi3spxiqnx" path="res://Resources/Sprites/Items/Powers/Morph Ball/Morph Ball.png" id="7_i8nf1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1i5c"]
 atlas = ExtResource("3_0d6rm")
@@ -141,6 +143,9 @@ size = Vector2(23, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3a5a"]
 size = Vector2(15, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q3em"]
+size = Vector2(12, 13)
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="Samus" type="CharacterBody2D" parent="."]
@@ -182,3 +187,14 @@ shape = SubResource("RectangleShape2D_d1uuf")
 [node name="CollisionShapeHand" type="CollisionShape2D" parent="Chozo Statue"]
 position = Vector2(19.5, 13)
 shape = SubResource("RectangleShape2D_j3a5a")
+
+[node name="Morphball" type="Area2D" parent="."]
+position = Vector2(-266, -25)
+script = ExtResource("7_33k00")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Morphball"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_5q3em")
+
+[node name="Sprite2D" type="Sprite2D" parent="Morphball"]
+texture = ExtResource("7_i8nf1")
